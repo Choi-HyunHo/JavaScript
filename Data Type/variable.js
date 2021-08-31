@@ -2,7 +2,7 @@
 
 // Variable
 // 변수 : 변경될 수 있는 값
-// let(added in ES6)  
+// let(added in ES6)  (read/write)
 // Mutable : 값이 계속 변경될 수 있다.
 // block scope
 
@@ -17,7 +17,7 @@ console.log(name);
 // var hoisting(move declaration from bottom to top)
 // has no block scope
 
-// constants
+// constants (only read)
 // Immutable : 변경이 불가능!
 // 값을 할당하고 다시는 값을 변경하지 않는다!
 // 보안상의 이유
