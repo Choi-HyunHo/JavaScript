@@ -16,7 +16,7 @@ class Person{
         console.log(`${this.name}: hello!`);
     }
 }
-
+// Object 생성
 const hyunho = new Person('hyunho', 20);
 console.log(hyunho.name);
 console.log(hyunho.age);
