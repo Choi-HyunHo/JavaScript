@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Coordinates</title>
+    <style>
+        div{
+            width: 140px;
+            height: 140px;
+            background-color: thistle;
+            margin-bottom: 10px;
+        }
+
+        .special{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="special"></div>
+    <div></div>
+    <script>
+        //rect 값 받고, client x,y page x,y 구하기 console.log
+        const special = document.querySelector('.special')
+        const rect = special.getBoundingClientRect()
+    
+        function boxListC(e){
+            console.log(rect)
+            console.log( 
+                `Client X/Y: ${e.clientX}, ${e.clientY}
+                 Page X/Y: ${e.pageX}, ${e.pageY}`
+            )
+        }
+        special.addEventListener("click", boxListC)
+    </script>
+</body>
+</html>
