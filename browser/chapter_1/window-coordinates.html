@@ -16,9 +16,25 @@
         .special{
             background-color: red;
         }
+        .container{
+            position: fixed;
+            top: 20;
+            right: 0;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .container button:nth-child(2){
+            margin: 0 20px;
+        }
     </style>
 </head>
 <body>
+    <span class="container">
+        <button class="move">Scroll by 100px(y)</button>
+        <button class="start">Scroll to 100px(y)</button>
+        <button class="my_box">Scroll into speical</button>
+    </span>
     <div></div>
     <div></div>
     <div></div>
@@ -30,7 +46,8 @@
     <div class="special"></div>
     <div></div>
     <script>
-        //rect 값 받고, client x,y page x,y 구하기 console.log
+        //1. rect 값 받고, client x,y page x,y 구하기 console.log
+        //2. 100px씩 이동하는 버튼, 100px로 이동하는 것, special로 이동하는 것 
         const special = document.querySelector('.special')
         const rect = special.getBoundingClientRect()
     
@@ -42,6 +59,25 @@
             )
         }
         special.addEventListener("click", boxListC)
+
+        const move = document.querySelector('.move')
+        const start = document.querySelector('.start')
+        const my_box = document.querySelector('.my_box')
+
+        function movePage(){
+            window.scrollBy(0,100)
+        }
+        move.addEventListener("click", movePage)
+
+        function moveTop(){
+            window.scrollTo(0,-100)
+        }
+        start.addEventListener("click", moveTop)
+
+        function moveMy(){
+            special.scrollIntoView()
+        }
+        my_box.addEventListener("click", moveMy)
     </script>
 </body>
 </html>
